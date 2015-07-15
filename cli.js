@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+var chalk = require('chalk');
 var servst = require('servst');
 var http = require('http');
 var resolve = require('path').resolve;
@@ -19,11 +20,22 @@ var server = http.createServer(function(req, res) {
     if (err) {
       res.writeHead(404, {'Content-Type': 'text/plain'});
       res.end('Not found');
-      console.error('\033[91m404 \033[0m%s\033[90m not found\033[0m', err.url);
+      console.log(
+        chalk.red('404') +
+        chalk.bold(' %s ') +
+        'not found',
+        err.url
+      );
     }
   });
 });
 
 server.listen(program.port, function() {
-  console.log('\033[96mServing \033[0m%s\033[90m on port \033[0m%d', path, program.port);
+  console.log(
+    chalk.blue('Serving') +
+    chalk.bold(' %s ') +
+    'on port %d',
+    path,
+    program.port
+  );
 });
