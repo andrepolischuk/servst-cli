@@ -1,0 +1,21 @@
+{
+  "name": "servst-cli",
+  "description": "Simple file server",
+  "version": "0.0.0",
+  "keywords": [
+    "static",
+    "files",
+    "server",
+    "cli"
+  ],
+  "repository": "andrepolischuk/servst-cli",
+  "dependencies": {
+    "commander": "^2.7.1",
+    "servst": "^2.0.0"
+  },
+  "bin": {
+    "servst": "cli.js"
+  },
+  "author": "Andrey Polischuk <andre.polischuk@gmail.com>",
+  "license": "MIT"
+}
