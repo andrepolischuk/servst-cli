@@ -1,7 +1,5 @@
 #!/usr/bin/env node
-
 'use strict';
-
 var chalk = require('chalk');
 var http = require('http');
 var meow = require('meow');
