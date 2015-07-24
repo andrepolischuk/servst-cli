@@ -3,18 +3,37 @@
 'use strict';
 
 var chalk = require('chalk');
-var servst = require('servst');
 var http = require('http');
+var meow = require('meow');
 var resolve = require('path').resolve;
-var program = require('commander');
+var servst = require('servst');
 
-program
-  .version(require('./package').version)
-  .usage('[options] [dir]')
-  .option('-p, --port <port>', 'specify port', Number, 3000)
-  .parse(process.argv);
+var cli = meow({
+  help: [
+    'Usage',
+    '  servst [dir]',
+    '',
+    'Examples',
+    '  servst',
+    '  servst ./static',
+    '  servst --port 3100',
+    '',
+    'Options',
+    '  -p, --port <port>  specify port'
+  ]
+}, {
+  number: [
+    'port'
+  ],
+  alias: {
+    p: 'port'
+  },
+  default: {
+    port: 3000
+  }
+});
 
-var path = resolve(program.args.shift() || '.');
+var path = resolve(cli.input.shift() || '.');
 var statics = servst(path);
 
 var server = http.createServer(function(req, res) {
@@ -32,12 +51,12 @@ var server = http.createServer(function(req, res) {
   });
 });
 
-server.listen(program.port, function() {
+server.listen(cli.flags.port, function() {
   console.log(
     chalk.blue('Serving') +
     chalk.bold(' %s ') +
     'on port %d',
     path,
-    program.port
+    cli.flags.port
   );
 });

@@ -11,7 +11,7 @@
   "repository": "andrepolischuk/servst-cli",
   "dependencies": {
     "chalk": "^1.1.0",
-    "commander": "^2.7.1",
+    "meow": "^3.3.0",
     "servst": "^2.0.0"
   },
   "bin": {

@@ -15,12 +15,15 @@ npm install --global servst-cli
 ```sh
 servst --help
 
-  Usage: servst [options] [dir]
+  Usage
+    servst [dir]
 
-  Options:
+  Examples
+    servst
+    servst ./static
+    servst --port 3100
 
-    -h, --help         output usage information
-    -V, --version      output the version number
+  Options
     -p, --port <port>  specify port
 ```
 
