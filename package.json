@@ -17,6 +17,12 @@
   "bin": {
     "servst": "cli.js"
   },
+  "scripts": {
+    "test": "node test.js"
+  },
   "author": "Andrey Polischuk <andre.polischuk@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.2.0"
+  }
 }
