@@ -1,8 +1,8 @@
-# servst-cli
+# servst-cli [![Build Status][travis-image]][travis-url]
 
-  > Simple file server
+> Simple file server
 
-  [servst][servst] - API for this module
+[servst][servst] - API for this module
 
 ## Install
 
@@ -29,6 +29,9 @@ servst --help
 
 ## License
 
-  MIT
+MIT
+
+[travis-url]: https://travis-ci.org/andrepolischuk/servst-cli
+[travis-image]: https://travis-ci.org/andrepolischuk/servst-cli.svg?branch=master
 
 [servst]: https://github.com/andrepolischuk/servst
